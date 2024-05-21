@@ -12,8 +12,15 @@ const newTalha = [];
 
 for (let i = 0; i < talha.length; i++) {
   if (typeof talha[i] !== 'string') continue;
-  if (typeof talha[i] === 'number') break;
   console.log(talha[i], typeof talha[i]);
   newTalha.push(typeof talha[i]);
+}
+
+//break
+console.log('-------break------')
+for(let i=0; i<talha.length;i++){
+    if(typeof talha[i]==='number') break;
+    console.log(talha[i])
+
 }
 console.log(newTalha);
