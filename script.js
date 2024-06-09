@@ -90,74 +90,92 @@ for (let i = 0; i < bills.length; i++) {
   tips.push(tip);
   const total = tip + bills[i];
   totalAmount.push(total);
-  
 }
-console.log(totalAmount,tips)
+console.log(totalAmount, tips);
 
-function calcAvg(arr){
-    let sum=0;
-    for(let i=0;i<arr.length;i++){
-        sum=+arr[i];
-    }
-    return sum/arr.length;
+function calcAvg(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = +arr[i];
+  }
+  return sum / arr.length;
 }
 
-calcAvg(bills)
+calcAvg(bills);
 
 ///Destructring arrays
 
-const ratings = [['rating', 4.19], ['ratingsCount', 144584]];
+const ratings = [
+  ['rating', 4.19],
+  ['ratingsCount', 144584],
+];
 
-const[[,rating],[,ratingCount]]=ratings;
-console.log(rating,ratingCount)
+const [[, rating], [, ratingCount]] = ratings;
+console.log(rating, ratingCount);
 
 const ratingStars = [63405, 1808];
-const[fiveStarRatings=0,oneStarRatings=0,threeStarRatings=0]=ratingStars;
-console.log(fiveStarRatings,oneStarRatings,threeStarRatings)
-
+const [fiveStarRatings = 0, oneStarRatings = 0, threeStarRatings = 0] =
+  ratingStars;
+console.log(fiveStarRatings, oneStarRatings, threeStarRatings);
 
 //////Object Destructring/////
 
-
-
-const resturant={
-    name:'geschmak',
-    owner:'talha',
-    starterMenue:['Pizza','Jogart','Coke'],
-    mainMenue:['Chicken','Rice','Beef'],
-    openingHour:{
-        fri:{
-            open:16,
-            close:23
-        },
-        sat:{
-            open:12,
-            close:22
-        }
-
+const resturant = {
+  name: 'geschmak',
+  owner: 'talha',
+  starterMenue: ['Pizza', 'Jogart', 'Coke'],
+  mainMenue: ['Chicken', 'Rice', 'Beef'],
+  openingHour: {
+    fri: {
+      open: 16,
+      close: 23,
     },
-    orderFood:function({addres,time=20,starterIndex,mainIndex=1}){
-        console.log(`your order is delieveed to ${addres} will arrive at ${time} includes ${this.starterMenue[starterIndex]} and ${this.mainMenue[mainIndex]}`)
+    sat: {
+      open: 12,
+      close: 22,
+    },
+  },
+  orderFood: function ({ addres, time = 20, starterIndex, mainIndex = 1 }) {
+    console.log(
+      `your order is delieveed to ${addres} will arrive at ${time} includes ${this.starterMenue[starterIndex]} and ${this.mainMenue[mainIndex]}`
+    );
+  },
+  orderLaptop: function (laptCompany, laptModel) {
+    console.log(
+      `Good New :Your order of ${laptCompany} with ${laptModel} is dispacted`
+    );
+  },
+};
 
-    }
-}
+const orderDetail = [
+  prompt('lets order your new Gagdte ! laptop model'),
+  prompt('laptop company'),
+];
+console.log(orderDetail)
+
+resturant.orderLaptop(...orderDetail)
 
 resturant.orderFood({
-    addres:'romerstadter street 2',
-    time:22,
-    starterIndex:2,
-    mainIndex:2,
-
-})
+  addres: 'romerstadter street 2',
+  time: 22,
+  starterIndex: 2,
+  mainIndex: 2,
+});
 resturant.orderFood({
-    addres:'romerstadter street 2',
-    starterIndex:2,
-})
+  addres: 'romerstadter street 2',
+  starterIndex: 2,
+});
 
-const[main,,secondary]=resturant.starterMenue;
-console.log(main,secondary)
+const [main, , secondary] = resturant.starterMenue;
+console.log(main, secondary);
 
+const { name: resturantName } = resturant;
+const {
+  sat: { open: o, close: c },
+} = resturant.openingHour;
+console.log(o, c, resturantName);
 
-const{name:resturantName}=resturant;
-const{sat:{open:o,close:c}}=resturant.openingHour;
-console.log(o,c,resturantName)
+const newResturant = { ...resturant };
+newResturant.name = 'burger king';
+console.log(resturant);
+console.log(newResturant);
