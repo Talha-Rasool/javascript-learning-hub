@@ -116,3 +116,48 @@ const[fiveStarRatings=0,oneStarRatings=0,threeStarRatings=0]=ratingStars;
 console.log(fiveStarRatings,oneStarRatings,threeStarRatings)
 
 
+//////Object Destructring/////
+
+
+
+const resturant={
+    name:'geschmak',
+    owner:'talha',
+    starterMenue:['Pizza','Jogart','Coke'],
+    mainMenue:['Chicken','Rice','Beef'],
+    openingHour:{
+        fri:{
+            open:16,
+            close:23
+        },
+        sat:{
+            open:12,
+            close:22
+        }
+
+    },
+    orderFood:function({addres,time=20,starterIndex,mainIndex=1}){
+        console.log(`your order is delieveed to ${addres} will arrive at ${time} includes ${this.starterMenue[starterIndex]} and ${this.mainMenue[mainIndex]}`)
+
+    }
+}
+
+resturant.orderFood({
+    addres:'romerstadter street 2',
+    time:22,
+    starterIndex:2,
+    mainIndex:2,
+
+})
+resturant.orderFood({
+    addres:'romerstadter street 2',
+    starterIndex:2,
+})
+
+const[main,,secondary]=resturant.starterMenue;
+console.log(main,secondary)
+
+
+const{name:resturantName}=resturant;
+const{sat:{open:o,close:c}}=resturant.openingHour;
+console.log(o,c,resturantName)
