@@ -148,8 +148,8 @@ const resturant = {
 };
 
 const orderDetail = [
-  prompt('lets order your new Gagdte ! laptop model'),
-  prompt('laptop company'),
+//   prompt('lets order your new Gagdte ! laptop model'),
+//   prompt('laptop company'),
 ];
 console.log(orderDetail)
 
@@ -179,3 +179,36 @@ const newResturant = { ...resturant };
 newResturant.name = 'burger king';
 console.log(resturant);
 console.log(newResturant);
+
+const finalMenue=[...resturant.starterMenue,...resturant.mainMenue];
+console.log(finalMenue);
+
+////rest pattern
+
+const postion=['tal','zan','ham','joh','aur'];
+const[a,b,j,...others]=postion;
+console.log(a,b,j,others);
+
+const{sat,...weekday}=resturant.openingHour;
+console.log(sat,weekday)
+
+function add(...numbers){
+    
+    let sum=0;
+    for(let i=0;i<numbers.length;i++ ) {
+        sum+=numbers[i];
+     
+        
+    }
+    console.log(sum)
+    
+    
+
+
+}
+add(2,4);
+add(5,6,7,8);
+add(8,5,4,2,1,7);
+
+const x=[4,4,4,4];
+add(...x)
