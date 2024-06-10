@@ -212,3 +212,23 @@ add(8,5,4,2,1,7);
 
 const x=[4,4,4,4];
 add(...x)
+
+
+const rest1={
+    name:'Capri',
+    numGuests:0,
+}
+
+const rest2={
+    name:'La pizza',
+    owner:'rana deen',
+};
+
+rest1.numGuests ??=10;
+rest2.numGuests ??=10;
+
+console.log(rest1,rest2)
+
+rest1.owner=rest1.owner && 'ANONYMOUS'
+rest2.owner &&='ANONYMOUS'
+console.log(rest1,rest2)
