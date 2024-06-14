@@ -49,4 +49,12 @@ function percentageOfWorld(pop) {
 
 console.log(percentageOfWorld(population));
 
+///loop in loop
 
+for(let parent=0;parent>=1;parent++){
+    console.log(`parent${parent} has costed his vote!`);
+
+    for(let childs=0; childs >=3; childs++){
+        console.log(`child ${childs} have also casted his Vote`)
+    }
+}
