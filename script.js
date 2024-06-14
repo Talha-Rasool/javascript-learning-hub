@@ -33,10 +33,10 @@ for (let i = 0; i < 50; i++) {
 
 const population = [24, 8, 202, 1441];
 if (population.length === 4) {
-    console.log(true);
-  } else {
-    console.log(false);
-  }
+  console.log(true);
+} else {
+  console.log(false);
+}
 
 function percentageOfWorld(pop) {
   const population = [];
@@ -51,10 +51,23 @@ console.log(percentageOfWorld(population));
 
 ///loop in loop
 
-for(let parent=0;parent>=1;parent++){
-    console.log(`parent${parent} has costed his vote!`);
+for (let p = 0; p <= 1; p++) {
+  console.log('parent  has costed his vote!');
 
-    for(let childs=0; childs >=3; childs++){
-        console.log(`child ${childs} have also casted his Vote`)
+  for (let childs = 0; childs <= 3; childs++) {
+    console.log('child  have also casted his Vote');
+  }
+}
+
+
+const listOfNeighbours=[['Canada','Mexico'],['Spain'],['Norway','Sweden','Russia']];
+
+for(let i=0;i<listOfNeighbours.length;i++){
+    console.log(listOfNeighbours[i])
+
+    for(let y=0; y < listOfNeighbours[i].length; y++){
+        console.log(`Neighbour ${listOfNeighbours[i][y]}`)
     }
 }
+
+
