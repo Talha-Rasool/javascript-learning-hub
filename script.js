@@ -484,11 +484,6 @@ const newGameEvents= new Set(gameEvents.values());
 console.log(newGameEvents)
 
 for (const [time,event] of gameEvents){
-  if (time < 45) {
-    console.log(`[First Half]  ${time}: ${event}`)
-
-  }else{
-    console.log(`[Second Half] ${time}: ${event}`)
-  }
-
+ const half=time <=45?'FIRST':'Second';
+ console.log(`[${half}HALF] ${time} : ${event}`)
 }
