@@ -487,3 +487,24 @@ for (const [time,event] of gameEvents){
  const half=time <=45?'FIRST':'Second';
  console.log(`[${half}HALF] ${time} : ${event}`)
 }
+
+
+//Higher order functions
+
+console.log('-------Higher Order Functions-------------');
+
+function oneWord(str){
+  return str.replace(/ /g,'').toLowerCase();
+};
+function upperFirstWord(str){
+  const [first, ...others]=str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ')
+};
+
+function transformer(str,fn){
+  console.log(`Orginal string :${str}`);
+  console.log(`Transfered string : ${fn(str)}`);
+  console.log(`Transfered by :${fn.name}`)
+
+}
+transformer('Java is the well language',upperFirstWord)
