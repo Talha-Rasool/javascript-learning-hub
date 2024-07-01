@@ -135,7 +135,7 @@ const resturant = {
       close: 22,
     },
   },
-  orderFood: function ({ addres, time = 20, starterIndex=2, mainIndex = 1 }) {
+  orderFood: function ({ addres, time = 20, starterIndex = 2, mainIndex = 1 }) {
     console.log(
       `your order is delieveed to ${addres} will arrive at ${time} includes ${this.starterMenue[starterIndex]} and ${this.mainMenue[mainIndex]}`
     );
@@ -147,15 +147,13 @@ const resturant = {
   },
 };
 
-
-
 const orderDetail = [
-//   prompt('lets order your new Gagdte ! laptop model'),
-//   prompt('laptop company'),
+  //   prompt('lets order your new Gagdte ! laptop model'),
+  //   prompt('laptop company'),
 ];
-console.log(orderDetail)
+console.log(orderDetail);
 
-resturant.orderLaptop(...orderDetail)
+resturant.orderLaptop(...orderDetail);
 
 resturant.orderFood({
   addres: 'romerstadter street 2',
@@ -182,75 +180,64 @@ newResturant.name = 'burger king';
 console.log(resturant);
 console.log(newResturant);
 
-
 ///for of loop in array[value,key,entries]//////
-const finalMenue=[...resturant.starterMenue,...resturant.mainMenue];
-for(const [i,el] of finalMenue.entries()) {
-    console.log(`${i+1}: ${el}`);
+const finalMenue = [...resturant.starterMenue, ...resturant.mainMenue];
+for (const [i, el] of finalMenue.entries()) {
+  console.log(`${i + 1}: ${el}`);
 }
 console.log(finalMenue);
 
 console.log('----------for of loop on objects-----------------');
 
-for(const [day,{open,close}] of Object.entries(resturant.openingHour)) {
-    console.log(`we are open on ${day} at ${open} and will close at ${close}`)
+for (const [day, { open, close }] of Object.entries(resturant.openingHour)) {
+  console.log(`we are open on ${day} at ${open} and will close at ${close}`);
 }
-
 
 //////optional chaining/////////////////
 
-resturant.orderFood?.({addres:'ali baba chowk'}) ?? 'this not exist';
+resturant.orderFood?.({ addres: 'ali baba chowk' }) ?? 'this not exist';
 
 ////rest pattern
 
-const postion=['tal','zan','ham','joh','aur'];
-const[a,b,j,...others]=postion;
-console.log(a,b,j,others);
+const postion = ['tal', 'zan', 'ham', 'joh', 'aur'];
+const [a, b, j, ...others] = postion;
+console.log(a, b, j, others);
 
-const{sat,...weekday}=resturant.openingHour;
-console.log(sat,weekday)
+const { sat, ...weekday } = resturant.openingHour;
+console.log(sat, weekday);
 
-function add(...numbers){
-    
-    let sum=0;
-    for(let i=0;i<numbers.length;i++ ) {
-        sum+=numbers[i];
-     
-        
-    }
-    console.log(sum)
-    
-    
-
-
+function add(...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
 }
-add(2,4);
-add(5,6,7,8);
-add(8,5,4,2,1,7);
+add(2, 4);
+add(5, 6, 7, 8);
+add(8, 5, 4, 2, 1, 7);
 
-const x=[4,4,4,4];
-add(...x)
+const x = [4, 4, 4, 4];
+add(...x);
 
-
-const rest1={
-    name:'Capri',
-    numGuests:0,
-}
-
-const rest2={
-    name:'La pizza',
-    owner:'rana deen',
+const rest1 = {
+  name: 'Capri',
+  numGuests: 0,
 };
 
-rest1.numGuests ??=10;
-rest2.numGuests ??=10;
+const rest2 = {
+  name: 'La pizza',
+  owner: 'rana deen',
+};
 
-console.log(rest1,rest2)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
 
-rest1.owner=rest1.owner && 'ANONYMOUS'
-rest2.owner &&='ANONYMOUS'
-console.log(rest1,rest2);
+console.log(rest1, rest2);
 
+rest1.owner = rest1.owner && 'ANONYMOUS';
+rest2.owner &&= 'ANONYMOUS';
+console.log(rest1, rest2);
 
 /////Assignment /////
 
@@ -280,77 +267,74 @@ GOOD LUCK 😀
 */
 
 const game = {
-    team1: 'Bayern Munich',
-    team2: 'Borrussia Dortmund',
-    players: [
-      [
-        'Neuer',
-        'Pavard',
-        'Martinez',
-        'Alaba',
-        'Davies',
-        'Kimmich',
-        'Goretzka',
-        'Coman',
-        'Muller',
-        'Gnarby',
-        'Lewandowski',
-      ],
-      [
-        'Burki',
-        'Schulz',
-        'Hummels',
-        'Akanji',
-        'Hakimi',
-        'Weigl',
-        'Witsel',
-        'Hazard',
-        'Brandt',
-        'Sancho',
-        'Gotze',
-      ],
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
     ],
-    score: '4:0',
-    scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-    date: 'Nov 9th, 2037',
-    odds: {
-      team1: 1.33,
-      x: 3.25,
-      team2: 6.5,
-    },
-  };
-
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
 
 console.log('---------------practice soccor game----------------------');
 
 // 1. Loop over the game.scored array and print each player name to the console, along with the goal
 //  number (Example: "Goal 1: Lewandowski")
 
-const goalList=game.scored;
-console.log(goalList)
-for(const [i,player] of goalList.entries()){
-    console.log(`Goal ${i+1}: ${player}`);
+const goalList = game.scored;
+console.log(goalList);
+for (const [i, player] of goalList.entries()) {
+  console.log(`Goal ${i + 1}: ${player}`);
 }
 
-const playerObj={};
-for(const [i,player] of goalList.entries()){
-//console.log(`${player}: ${i}`)
-playerObj[player]=`${i+1}`
-console.log(playerObj)
+const playerObj = {};
+for (const [i, player] of goalList.entries()) {
+  //console.log(`${player}: ${i}`)
+  playerObj[player] = `${i + 1}`;
+  console.log(playerObj);
 }
 //console.log(playerObj)
-// 2. Use a loop to calculate the average odd and log it to the console (We already studied how to 
+// 2. Use a loop to calculate the average odd and log it to the console (We already studied how to
 // calculate averages, you can go check if you don't remember)
-let sum=0;
-const odd=Object.values(game.odds);
+let sum = 0;
+const odd = Object.values(game.odds);
 
-for(const y of odd){
-    sum+=y;
-   
-};
-const avgOfOdds=sum/odd.length;
-console.log(avgOfOdds)
- 
+for (const y of odd) {
+  sum += y;
+}
+const avgOfOdds = sum / odd.length;
+console.log(avgOfOdds);
 
 // . Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
 //       Odd of victory Bayern Munich: 1.33
@@ -359,152 +343,190 @@ console.log(avgOfOdds)
 // Get the team names directly from the game object, don't hardcode them (except for "draw"). HINT:
 //  Note how the odds and the game objects have the same property names 😉
 
-
-for(const [team,odd] of Object.entries(game.odds)){
-    const strTeam=team==='x'?'draw':`victory ${game[team]}`;
-    console.log(`odd of ${strTeam}:  ${odd}`)
+for (const [team, odd] of Object.entries(game.odds)) {
+  const strTeam = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`odd of ${strTeam}:  ${odd}`);
 }
 
-
-  //1. Create one player array for each team (variables 'players1' and 'players2')
+//1. Create one player array for each team (variables 'players1' and 'players2')
 console.log('----------------------Assignment------------');
-  const[players1,players2]=game.players;
-  console.log(players1,players2)
+const [players1, players2] = game.players;
+console.log(players1, players2);
 
-//  2. The first player in any player array is the goalkeeper and the others are field players. 
-// For Bayern Munich (team 1) create one variable ('gk') with the goalkeeper's name, and one array 
+//  2. The first player in any player array is the goalkeeper and the others are field players.
+// For Bayern Munich (team 1) create one variable ('gk') with the goalkeeper's name, and one array
 // ('fieldPlayers') with all the remaining 10 field players
 
-const[gk,...fieldPlayers]=players1;
-console.log(gk,fieldPlayers)
-
+const [gk, ...fieldPlayers] = players1;
+console.log(gk, fieldPlayers);
 
 // 3. Create an array 'allPlayers' containing all players of both teams (22 players)
-// 4. During the game, Bayern Munich (team 1) used 3 substitute players. So create a new array 
+// 4. During the game, Bayern Munich (team 1) used 3 substitute players. So create a new array
 // ('players1Final') containing all the original team1 players plus 'Thiago', 'Coutinho' and 'Perisic'
 
-const allPlayers=[...players1,...players2];
-console.log(allPlayers)
+const allPlayers = [...players1, ...players2];
+console.log(allPlayers);
 
-const players1FinalBM=[...players1,'Thiago', 'Coutinho', 'Perisic'];
+const players1FinalBM = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
 
 console.log(players1FinalBM);
 
 // 5. Based on the game.odds object, create one variable for each odd (called 'team1', 'draw' and
 //     'team2')
 
-const{team1,x:draw,team2}=game.odds;
-console.log(team1,draw,team2);
-   
+const { team1, x: draw, team2 } = game.odds;
+console.log(team1, draw, team2);
 
-// 6. Write a function ('printGoals') that receives an arbitrary number of player names (NOT an array) 
-// and prints each of them to the console, along with the number of goals that were scored in total 
+// 6. Write a function ('printGoals') that receives an arbitrary number of player names (NOT an array)
+// and prints each of them to the console, along with the number of goals that were scored in total
 // (number of player names passed in)
 
-function printGoals(...name){
-    console.log(name)
-const numbGoals=name.length;
-console.log(`Total goal scored are ${numbGoals}`)
-};
+function printGoals(...name) {
+  console.log(name);
+  const numbGoals = name.length;
+  console.log(`Total goal scored are ${numbGoals}`);
+}
 
-printGoals('ali','ronaldo');
-printGoals('ali','ronaldo','zain');
-printGoals('ali','ronaldo','zain','ali','ronaldo','zain')
+printGoals('ali', 'ronaldo');
+printGoals('ali', 'ronaldo', 'zain');
+printGoals('ali', 'ronaldo', 'zain', 'ali', 'ronaldo', 'zain');
 printGoals(...game.scored);
 
-
-// . The team with the lower odd is more likely to win. Print to the console which team is more likely 
+// . The team with the lower odd is more likely to win. Print to the console which team is more likely
 // to win, WITHOUT using an if/else statement or the ternary operator.
 
 team1 > team2 && console.log('Team 2 is most likely to win');
 team2 > team1 && console.log('Team 1 is most likely to win');
 
-
-
 console.log('-------------Maps----------------');
-const question=new Map([
-  ['question','Which country has Space technology'],
-  [1,'USA'],
-  [2,'China'],
-  [3,'Russia'],
-  ['correct',2],
-  [true,'correct'],
-  [false,'Try again']
-])
+const question = new Map([
+  ['question', 'Which country has Space technology'],
+  [1, 'USA'],
+  [2, 'China'],
+  [3, 'Russia'],
+  ['correct', 2],
+  [true, 'correct'],
+  [false, 'Try again'],
+]);
 
 console.log(question);
 console.log(question.get('question'));
-for(const [key,val] of question){
-  if(typeof key === 'number')console.log(`Answer ${key} : ${val}`)
-
+for (const [key, val] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key} : ${val}`);
 }
 
 //const answer= Number(prompt('Give your Answer'));
-const answer=2;
-console.log(question.get('correct')===answer)
+const answer = 2;
+console.log(question.get('correct') === answer);
 
 console.log('-------------Coding Challange 3');
 
-// /* 
+// /*
 // Let's continue with our football betting app! This time, we have a map with a log of the events that happened during the game. The values are the events themselves, and the keys are the minutes in which each event happened (a football game has 90 minutes plus some extra time).
 
 // 1. Create an array 'events' of the different game events that happened (no duplicates)
 // 2. After the game has finished, is was found that the yellow card from minute 64 was unfair.
 // So remove this event from the game events log.
-// 3. Print the following string to the console: "An event happened, on average, every 
+// 3. Print the following string to the console: "An event happened, on average, every
 //9 minutes" (keep in mind that a game has 90 minutes)
 // 4. Loop over the events and log them to the console, marking whether it's in the first half
 // or second half (after 45 min) of the game, like this:
 //       [FIRST HALF] 17: ⚽️ GOAL
 
-
-
 const gameEvents = new Map([
-    [17, '⚽️ GOAL'],
-    [36, '🔁 Substitution'],
-    [47, '⚽️ GOAL'],
-    [61, '🔁 Substitution'],
-    [64, '🔶 Yellow card'],
-    [69, '🔴 Red card'],
-    [70, '🔁 Substitution'],
-    [72, '🔁 Substitution'],
-    [76, '⚽️ GOAL'],
-    [80, '⚽️ GOAL'],
-    [92, '🔶 Yellow card'],
-  ]);
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
 
 gameEvents.delete(64);
 console.log(gameEvents);
 
-const time=[...gameEvents.keys()].pop();
-console.log(`An event happend, on average, every ${time/gameEvents.size} minutes`);
+const time = [...gameEvents.keys()].pop();
+console.log(
+  `An event happend, on average, every ${time / gameEvents.size} minutes`
+);
 
+const newGameEvents = new Set(gameEvents.values());
+console.log(newGameEvents);
 
-const newGameEvents= new Set(gameEvents.values());
-console.log(newGameEvents)
-
-for (const [time,event] of gameEvents){
- const half=time <=45?'FIRST':'Second';
- console.log(`[${half}HALF] ${time} : ${event}`)
+for (const [time, event] of gameEvents) {
+  const half = time <= 45 ? 'FIRST' : 'Second';
+  console.log(`[${half}HALF] ${time} : ${event}`);
 }
-
 
 //Higher order functions
 
 console.log('-------Higher Order Functions-------------');
 
-function oneWord(str){
-  return str.replace(/ /g,'').toLowerCase();
-};
-function upperFirstWord(str){
-  const [first, ...others]=str.split(' ');
-  return [first.toUpperCase(), ...others].join(' ')
-};
+function oneWord(str) {
+  return str.replace(/ /g, '').toLowerCase();
+}
+function upperFirstWord(str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+}
 
-function transformer(str,fn){
+function transformer(str, fn) {
   console.log(`Orginal string :${str}`);
   console.log(`Transfered string : ${fn(str)}`);
-  console.log(`Transfered by :${fn.name}`)
-
+  console.log(`Transfered by :${fn.name}`);
 }
-transformer('Java is the well language',upperFirstWord)
+transformer('Java is the well language', upperFirstWord);
+
+/* 
+Let's build a simple poll app!
+
+
+A poll has a question, an array of options from which people can choose, and an array with 
+the number of replies for each option. This data is stored in the starter object below.
+
+Here are your tasks:
+
+1. Create a method called 'registerNewAnswer' on the 'poll' object. The method does 2 things:
+  1.1. Display a prompt window for the user to input the number of the selected option. 
+  The prompt should look like this:
+        What is your favourite programming language?
+        0: JavaScript
+        1: Python
+        2: Rust
+        3: C++
+        (Write option number)
+  
+  1.2. Based on the input number, update the answers array. For example, if the option is 3,
+   increase the value AT POSITION 3 of the array by 1. Make sure to check if the input is a
+    number and if the number makes sense (e.g answer 52 wouldn't make sense, right?)
+2. Call this method whenever the user clicks the "Answer poll" button.
+3. Create a method 'displayResults' which displays the poll results. The method takes a string
+ as an input (called 'type'), which can be either 'string' or 'array'. If type is 'array', simply 
+ display the results array as it is, using console.log(). This should be the default option. 
+ If type is 'string', display a string like "Poll results are 13, 2, 4, 1". 
+4. Run the 'displayResults' method at the end of each 'registerNewAnswer' method call.
+
+HINT: Use many of the tools you learned about in this and the last section 😉
+
+BONUS: Use the 'displayResults' method to display the 2 arrays in the test data. Use both the 
+'array' and the 'string' option. Do NOT put the arrays in the poll object! So what shoud the this
+ keyword look like in this situation?
+
+BONUS TEST DATA 1: [5, 2, 3]
+BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
+
+GOOD LUCK 😀
+*/
+
+const poll = {
+  question: 'What is your favourite programming language ?',
+  options: ['0: JavaScript', '1:python', '2:GoLang', '3:C++'],
+  answer: new Array(4).fill(0),
+  
+};
+
