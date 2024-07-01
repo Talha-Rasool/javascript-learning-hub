@@ -527,6 +527,11 @@ const poll = {
   question: 'What is your favourite programming language ?',
   options: ['0: JavaScript', '1:python', '2:GoLang', '3:C++'],
   answer: new Array(4).fill(0),
+  registerNewAnswer(){
+    const quiz=Number(prompt(`${this.question}\n ${this.options.join(' \n ')}\n write your option below:`))
+    typeof quiz ==='number'&& quiz < this.answer.length && this.answer[quiz]++;
+    console.log(this.answer);
+  }
   
 };
-
+poll.registerNewAnswer()
